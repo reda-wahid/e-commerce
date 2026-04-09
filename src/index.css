@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  behavior: smooth;
+}
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+@theme {
+  --color-main_color: #0090f0;
+  --color-p_color: #7b7b7b;
+  --color-bg_color: #f3f3f3;
+  --color-white_color: #fff;
+  --color-color_heading: #253237;
+  --color-border_color: #d6d6d6d5;
+}
+.swiper-slide {
+  will-change: transform;
+}
+.active {
+  color: red;
+}
+
+@layer {
+  .container{
+  @apply w-11/13 
+}
+  .btnIcon {
+    @apply w-10 h-10 rounded-full p-3 bg-border_color cursor-pointer  hover:scale-105 duration-300 transition-all;
+  }
+  .disable {
+    @apply bg-main_color text-white cursor-not-allowed;
+  }
+  .favRemoved{
+   @apply bg-main_color text-white
+  }
+  .icons {
+    @apply absolute grid gap-6 text-main_color -right-12 top-12 duration-300 transition-all;
+  }
+  .cart {
+    @apply overflow-x-hidden;
+  }
+  .cart:hover .icons {
+    @apply absolute right-3 ;
+  }
+}
