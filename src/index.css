@@ -20,9 +20,7 @@ body {
 .swiper-slide {
   will-change: transform;
 }
-.active {
-  color: red;
-}
+
 
 @layer {
   .container{
@@ -45,5 +43,8 @@ body {
   }
   .cart:hover .icons {
     @apply absolute right-3 ;
+  }
+  .active{
+    @apply  py-1 px-8 rounded-2xl bg-linear-150 from-white/20 to-blue-950 text-white/80
   }
 }

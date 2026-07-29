@@ -1,13 +1,13 @@
 import  TopHedear  from './TopHedear'
-import  BotomHedear  from "./BottomHedear";
+import  BottomHedear  from "./BottomHedear";
 
 export default function Hedear() {
   return (
     <>
-      <div>
+  
         <TopHedear />
-        <BotomHedear />
-      </div>
+        <BottomHedear  />
+     
     </>
   );
 }

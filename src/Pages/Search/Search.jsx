@@ -28,7 +28,7 @@ export default function Search() {
           {searchResults.length > 0 ? (
             <div className="mt-6">
               <h2>Results for : {searchQuery}</h2>
-              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4">
+              <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4 ">
                 {searchResults.map((item) => (
                   <Suspense key={item.id} fallback={<LoadingProduct />}>
                     <Product  item={item} />

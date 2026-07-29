@@ -17,7 +17,7 @@ export default function Cart() {
   });
   return (
     <>
-      <div className="md:container mx-auto px-2 mb-4" data-aos="zoom-in-up">
+      <div className="md:container mx-auto px-2 mb-4 min:h-96" data-aos="zoom-in-up">
         <div className="flex justify-between items-center mt-4">
           <h1 className="text-main_color text-3xl  font-bold">Order Summary</h1>
           <div className="text-blue-600">
@@ -28,9 +28,12 @@ export default function Cart() {
           </div>
         </div>
         {cartItems.length === 0 ? (
-          <p>Your Cart Is Empty</p>
+          <div className="flex flex-col items-center justify-center gap-4 mt-16">
+            <img height={"30%"} width={"30%"} className=" object-cover h-1/3 " src="./OIP.webp" alt="empty cart"/>
+            <p className="text-xl font-semibold text-black/80">Your Cart Is Empty...</p>
+          </div>
         ) : (
-          <table className="md:w-full overflow-y-auto max:h-dvh border-collapse border border-border_color mt-4">
+          <table className="md:w-full  overflow-y-auto max:h-dvh border-collapse border border-border_color mt-4">
             <thead>
               <tr className="border-b-2 border-border_color py-4">
                 <th className="py-4">product</th>

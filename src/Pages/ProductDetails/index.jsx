@@ -43,7 +43,7 @@ export default function ProdectDetails() {
               <ImageProduct data={data || []} />
               <InfoProduct data={data || []} />
             </div>
-            <div className="container  mx-auto px-3 mt-8">
+            <div className="  mx-auto px-3 mt-8">
               <div className="grid gap-3">
                 <h1 className="text-main_color text-4xl font-bold capitalize">
                   {data.category?.replace("-", " ")}
@@ -55,7 +55,7 @@ export default function ProdectDetails() {
                 {loading ? (
                   <LoadingProduct />
                 ) : (
-                  <div className="grid justify-center mx-auto grid-cols-1 lg:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5">
+                  <div className=" grid justify-center mx-auto grid-cols-1 lg:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5">
                     {catdata.map((item) => (
                       <Product key={item.id} item={item} />
                     ))}

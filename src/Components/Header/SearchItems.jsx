@@ -63,13 +63,13 @@ export default function SearchItems() {
           />
           <div
             onClick={handleSearch}
-            className="p-2 px-4 text-2xl bg-main_color text-white h-full w-full cursor-pointer"
+            className="p-2 px-4 text-2xl bg-linear-240 from-main_color  via-[#1e293b] to-[#0f172a] outline-none text-white h-full w-full cursor-pointer"
           >
             <IoMdSearch />
           </div>
         </div>
         {suggestions.length > 0 && (
-          <ul className="suggestions md:w-[35%] flex flex-col rounded gap-2 absolute top-full   left-1/2 -translate-x-1/2 justify-center items-center bg-white border border-border_color rounded-b-lg p-2 z-10">
+          <ul className="suggestions z-999  md:w-[35%] flex flex-col rounded gap-2  absolute top-full   left-1/2 -translate-x-1/2 justify-center items-center bg-white border border-border_color rounded-b-lg p-2 ">
             {suggestions.map((item) => (
               <div
                 key={item.id}

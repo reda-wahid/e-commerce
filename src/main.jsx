@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import Main from "./layOut/Main/index";
+import Main from "./LayOut/Main/index";
 import Home from "./Pages/Home/index";
 import About from "./Pages/About/index";
 import ProductDetails from "./Pages/ProductDetails/index";
@@ -13,7 +13,9 @@ import Categourys from "./Pages/Category";
 import { CartContext } from "./context/CartContext";
 import ContextProduct from "./context/Context";
 import Search from "./Pages/Search/Search";
-import Contact from "./Pages/contact/Contact";
+import Contact from "./Pages/Contact/Contact";
+import LogIn from "./LayOut/Auth/LogIn";
+import Register from "./LayOut/Auth/Register";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,13 @@ const router = createBrowserRouter([
       { path: "search", element: <Search /> },
     ],
   },
+  {
+    path: "auth",
+    children:[
+      {path:"login", element:<LogIn />},
+      {path:"register", element:<Register />}
+    ]
+  }
 ]);
 
 createRoot(document.getElementById("root")).render(

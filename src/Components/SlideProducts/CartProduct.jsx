@@ -14,7 +14,7 @@ const Product = lazy(() => import("./Product"));
 function CartProduct({ products = [] }) {
   return (
     <>
-      <div className=" w-[90.5lvw]  mb-6 mx-auto  overflow-x-hidden">
+      <div className="   mb-6 mx-auto  overflow-x-hidden">
         <Swiper
           loop={products.length > 4}
           spaceBetween={20}
@@ -30,11 +30,11 @@ function CartProduct({ products = [] }) {
           }}
           navigation={true}
           modules={[Navigation]}
-          className="mySwiper  w-[80lvw] md:w-[90.5lvw]  "
+          className="mySwiper  w-[80lvw] md:w-[84.5lvw]  "
         >
           {products?.map((item) => {
             return (
-              <SwiperSlide key={item.id} className="p-4">
+              <SwiperSlide key={item.id} >
                 <Suspense fallback={<LoadingProduct />}>
                   <Product item={item} />
                 </Suspense>

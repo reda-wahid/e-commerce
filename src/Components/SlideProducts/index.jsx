@@ -55,16 +55,16 @@ export default function SlideProducts() {
 
   return (
     <>
-      <div className="  px-3 w-[91.5lvw]  mb-6 mx-auto" >
+      <div className="  px-3 container  mb-6 mx-auto" >
         {categoury?.map((item) => (
-          <div key={item} className="w-11/12 grid gap-3" data-aos="zoom-in-up">
-            <h1 className="text-main_color text-4xl font-bold capitalize">
+          <div key={item} className="md:w-11/12  grid gap-3" data-aos="zoom-in-up">
+            <h1 className="bg-linear-90 from-main_color  via-[#1e293b] to-[#0f172a] bg-opacity-5  bg-clip-text   text-transparent text-4xl font-bold capitalize">
               {item.replace("-", " ")}
             </h1>
             <p className="text-p_color">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. ?
             </p>
-            <hr className="bg-mauve-300 h-px  border-none w-11/12" />
+            <hr className="bg-mauve-300 h-px  border-none " />
 
             <div color="p-4">
               <CartProduct

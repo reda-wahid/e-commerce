@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { CartContext } from "./CartContext";
 
 export default function ContextProduct({ children }) {
@@ -73,10 +73,9 @@ export default function ContextProduct({ children }) {
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
-  return (
-    <CartContext.Provider
-      value={{
-        addToCart,
+
+  const contextValue = useMemo(() => ({
+     addToCart,
         cartItems,
         addToFavorite,
         favoriteItems,
@@ -84,8 +83,9 @@ export default function ContextProduct({ children }) {
         IncreaseQuantity,
         handleRemoveCart,
         handleRemoveFavorite
-      }}
-    >
+}), [cartItems, favoriteItems]);
+  return (
+ <CartContext.Provider value={contextValue}>
       {children}
     </CartContext.Provider>
   );

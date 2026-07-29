@@ -1,7 +1,7 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { FaCartArrowDown, FaRegHeart, FaShare } from "react-icons/fa";
 import { FaStar, FaRegStarHalfStroke } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -28,32 +28,39 @@ export default function Product({ item }) {
     favoriteItems,
     handleRemoveFavorite,
   } = useContext(CartContext);
-  const existingFavoriteItem = favoriteItems.some(
-    (favoriteItem) => favoriteItem.id === item.id,
-  );
-  const existingCartItem = cartItems.some(
-    (cartItem) => cartItem.id === item.id,
-  );
+
+  const existingFavoriteItem = useMemo(() => {
+    return favoriteItems.some((favoriteItem) => favoriteItem.id === item.id);
+  });
+  const existingCartItem = useMemo(() => {
+    return cartItems.some((cartItem) => cartItem.id === item.id);
+  });
   const handleFavItem = () => {
-    existingFavoriteItem
-      ? (handleRemoveFavorite(item.id), showToasterror("from favorites"))
-      : (addToFavorite(item), showToastMessage("to favorites"));
+   if (existingFavoriteItem) {
+  handleRemoveFavorite(item.id);
+  showToasterror("from favorites");
+} else {
+  addToFavorite(item);
+  showToastMessage("to favorites");
+}
   };
 
-  const handleCart = () => {
-    addToCart(item);
-    showToastMessage("to cart");
-  };
+const handleCart = () => {
+  if (existingCartItem) return;
+
+  addToCart(item);
+  showToastMessage("to cart");
+};
   return (
     <>
-      <div className="cart relative border hover:border-main_color rounded-xl border-border_color p-4 mb-4 sm:max-w-80 w-full">
+      <div className="cart relative border  hover:border-main_color rounded-xl border-border_color p-4 mb-4 sm:max-w-80 w-full">
         <span
           className={` ${existingCartItem ? "absolute top-2 left-[50%] transform translate-x-[-50%] text-main_color" : "hidden"}`}
         >
           incart
         </span>
         <div className=" grid gap-4 ">
-          <NavLink to={`/product/${item.id}`} onClick={handleproduct}>
+          <Link to={`/product/${item.id}`} onClick={handleproduct}>
             <img
               src={item.thumbnail}
               alt={item.title}
@@ -70,7 +77,7 @@ export default function Product({ item }) {
               <FaRegStarHalfStroke />
             </div>
             <div className="price text-main_color text-2xl">${item.price}</div>
-          </NavLink>
+          </Link>
         </div>
 
         <div className="icons ">

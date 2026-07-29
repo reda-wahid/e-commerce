@@ -9,7 +9,7 @@ export default function ContentSwiper() {
           Microsoft Xbox <br /> 360 Controller{" "}
         </h3>
         <p className="text-p_color">Windows Xp/10/7/8 Ps3, Tv Box</p>
-        <button className="max-md:hidden btn w-fit text-white rounded-full px-8  p-3 mt-4 bg-main_color hover:scale-105 hover:text-color_heading transition-all duration-300">
+        <button className="max-md:hidden btn w-fit text-white rounded-full px-8  p-3 mt-4 bg-linear-240 from-main_color  via-[#1e293b] to-[#0f172a] hover:scale-105 hover:text-color_heading transition-all duration-300">
           <NavLink to="/products">Shop Now</NavLink>
         </button>
       </div>

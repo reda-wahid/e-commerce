@@ -34,7 +34,7 @@ export default function Categourys() {
   return (
     <>
       <div className="container mx-auto px-3 mt-8" data-aos="zoom-in-up">
-        <div className="grid gap-3">
+        <div className="grid  gap-3">
           <h1 className="text-main_color text-4xl font-bold capitalize">
             {cat.replace("-", " ")}
           </h1>
@@ -42,11 +42,13 @@ export default function Categourys() {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. ?
           </p>
           <hr className="bg-mauve-300 h-px  border-none" />
-          {data.map((item) => (
+         <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-3">
+           {data.map((item) => (
             <Suspense key={item.id} fallback={<LoadingProduct />}>
               <Product item={item || []} />
             </Suspense>
           ))}
+         </div>
         </div>
       </div>
     </>

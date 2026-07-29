@@ -70,7 +70,7 @@ export default function infoProduct({ data }) {
         </h4>
         <button
           onClick={handleCart}
-          className={`bg-main_color px-5 ${existingCartItem ? "disabled opacity-55" : " cursor-pointer  hover:scale-105 duration-300 transition-all hover:text-red-600"} text-white w-52 rounded-4xl`}
+          className={`bg-linear-240 from-main_color  via-[#1e293b] to-[#0f172a] px-5 ${existingCartItem ? "disabled opacity-55" : " cursor-pointer  hover:scale-105 duration-300 transition-all hover:text-red-600"} text-white w-52 rounded-4xl`}
         
         >
           Add To Cart
